@@ -42,7 +42,11 @@ Before running the API, make sure the database is up-to-date:
 dotnet ef database update
 ```
 
-### 4. Run the application
+### 4. Provide Pokémon data source
+
+The API requires a source data file named `pokemon.json`. This file is included in the repository. If missing, the API will not function properly.
+
+### 5. Run the application
 
 ```bash
 dotnet run
