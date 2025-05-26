@@ -29,7 +29,7 @@ cp .env.example .env
 Then, open the newly created `.env` file and provide your own values, especially the connection string:
 
 ```dotenv
-ConnectionStrings__DefaultConnection=Server=localhost\SQLEXPRESS;Database=PokemonDb;Trusted_Connection=True;TrustServerCertificate=True;
+CONNECTION_STRING=
 ```
 
 > Make sure you have **SQL Server Express** installed and running locally.
