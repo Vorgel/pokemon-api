@@ -73,7 +73,7 @@ public static class PokemonMapper
            Types: [.. p.Types.Select(t => t.Name)],
            Moves: [.. p.Moves.Select(m => m.Name)],
            Abilities: [.. p.Abilities.Select(a => a.Name)],
-           EvolvesFrom: p.EvolvesFrom?.Name,
-           EvolvesTo: [.. p.EvolvesTo.Select(e => e.Name)]
+           EvolvesFrom: p.EvolvesFrom is null ? null : new EvolutionInfoDto(p.EvolvesFrom.Id, p.EvolvesFrom.Name),
+       EvolvesTo: [.. p.EvolvesTo.Select(e => new EvolutionInfoDto(e.Id, e.Name))]
        );
 }

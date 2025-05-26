@@ -95,11 +95,12 @@ public class PokemonRepository(ApplicationDbContext context) : IPokemonRepositor
                 p.Types.Select(t => t.Name).ToList(),
                 p.Moves.Select(m => m.Name).ToList(),
                 p.Abilities.Select(a => a.Name).ToList(),
-                p.EvolvesFrom != null ? p.EvolvesFrom.Name : null,
-                p.EvolvesTo.Select(e => e.Name).ToList()
+                p.EvolvesFrom != null ? new EvolutionInfoDto(p.EvolvesFrom.Id, p.EvolvesFrom.Name) : null,
+                p.EvolvesTo.Select(e => new EvolutionInfoDto(e.Id, e.Name)).ToList()
             ))
             .FirstOrDefaultAsync(ct);
     }
+
     public async Task<DashboardSummaryDto> GetDashboardSummaryAsync(CancellationToken ct)
     {
         var all = await context.Pokemons

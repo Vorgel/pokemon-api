@@ -17,6 +17,6 @@ public record PokemonDto
     List<string> Types,
     List<string> Moves,
     List<string> Abilities,
-    string? EvolvesFrom,
-    List<string> EvolvesTo
+    EvolutionInfoDto? EvolvesFrom,
+    List<EvolutionInfoDto> EvolvesTo
 );
