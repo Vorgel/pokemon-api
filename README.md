@@ -53,7 +53,7 @@ dotnet run
 ```
 
 The API is pre-defined to be set at: 'https://localhost:65176/api' on the frontend side. 
-This is only due to quick development of this app and might be changed in the future.
+This is only due to quick development of this app and it might be changed in the future.
 
 ## API Usage
 
